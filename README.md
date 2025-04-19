@@ -1,26 +1,26 @@
-# 📩 **_Email/SMS Spam Classifier 🔍🚫_**  
+# **_Email/SMS Spam Classifier 🔍_**  
 
-## 🧠 **_About the Project_**  
+## **_About the Project_**  
 A Machine Learning-powered web application that classifies your messages as **Spam** or **Not Spam** in real-time. Built using **Python**, **NLTK**, **Scikit-learn**, and deployed with **Streamlit** on **Render**.
 
 ---
 
-## 📌 **_Step-by-Step Workflow_**
+## **_Step-by-Step Workflow_**
 
-### **_Step 1: Finding the Dataset_**  
+**_Step 1: Finding the Dataset_**  
 I began by finding a well-structured dataset (from Kaggle) containing labeled SMS messages as either *ham* (not spam) or *spam*.  
 
 📂 Source: [UCI SMS Spam Collection Dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset)
 
 ---
 
-### **_Step 2: Cleaning the Dataset_**  
+**_Step 2: Cleaning the Dataset_**  
 - Checked for null values and inconsistencies  
 - Removed duplicates  
 
 ---
 
-### **_Step 3: EDA (Exploratory Data Analysis)_**  
+**_Step 3: EDA (Exploratory Data Analysis)_**  
 Visualized patterns and insights:
 - **Ham messages** tend to be longer in words, characters, and sentence count.
 - **Spam messages** use certain repeated keywords and have a different tone.
@@ -31,14 +31,14 @@ Visualized patterns and insights:
 
 ---
 
-### **_Step 4: Text Preprocessing_**  
+**_Step 4: Text Preprocessing_**  
 Transforming text into a digestible format for ML:
 1. Convert to **lowercase**
 2. **Tokenization** – splitting into individual words  
 3. Remove **punctuation & stopwords** (since they add noise, not value)  
 4. **Stemming** – converting words to their root forms (e.g., “loved” → “love”)  
 
-🧠 Handled via `NLTK`:
+Handled via `NLTK`:
 ```python
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -46,7 +46,7 @@ nltk.download('stopwords')
 
 ---
 
-### **_Step 5: Vectorization_**  
+**_Step 5: Vectorization_**  
 Used **TF-IDF Vectorizer**:
 - Converts text into numeric features
 - Identifies **most important words** in context (not just frequently used ones)
@@ -56,7 +56,7 @@ Used **TF-IDF Vectorizer**:
 
 ---
 
-### **_Step 6: Model Building_**  
+**_Step 6: Model Building_**  
 - Split the dataset into **Train** and **Test** data  
 - Chose **Multinomial Naive Bayes (MNB)** for classification:
   - Best suited for **text-based** problems  
@@ -65,7 +65,7 @@ Used **TF-IDF Vectorizer**:
 
 ---
 
-### **_Step 7: Model Saving_**  
+**_Step 7: Model Saving_**  
 Used `pickle` to store:
 - Trained ML Model (`model.pkl`)
 - Fitted Vectorizer (`vectorizer.pkl`)  
@@ -78,7 +78,7 @@ pickle.dump(tfidf, open('vectorizer.pkl', 'wb'))
 
 ---
 
-### **_Step 8: Web App with Streamlit_**  
+**_Step 8: Web App with Streamlit_**  
 Created a sleek UI to interact with the classifier:
 ```bash
 streamlit run app.py
@@ -88,7 +88,7 @@ Users can input any message and see whether it’s spam or not — with a stylis
 
 ---
 
-### **_Step 9: Deployment on Render_**  
+**_Step 9: Deployment on Render_**  
 Deployed using [Render](https://render.com):
 
 - Created `requirements.txt`
@@ -96,7 +96,7 @@ Deployed using [Render](https://render.com):
 - Set up Python environment in Render dashboard
 - Deployed using `app.py` as entry point
 
-🚀 [🔗 Try the Live App](https://email-spam-detection-ml-11.onrender.com)
+[🔗 Try the Live App](https://email-spam-detection-ml-11.onrender.com)
 
 ---
 
