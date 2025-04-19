@@ -7,6 +7,13 @@ from nltk.stem.porter import PorterStemmer
 
 nltk.download('punkt')
 nltk.download('stopwords')
+import nltk
+from nltk.data import find
+
+try:
+    find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 
 ps=PorterStemmer()
 
