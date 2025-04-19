@@ -54,9 +54,9 @@ if st.button('Predict'):
     result=model.predict(vector_input)[0]
     #4.Display
     if result==1:
-        st.header("Spam")
+         st.markdown(f'<div style="background-color: red; color: white; padding: 10px; border-radius: 5px;">Spam</div>', unsafe_allow_html=True)
     else:
-        st.header("Not spam")
+        st.markdown(f'<div style="background-color: green; color: white; padding: 10px; border-radius: 5px;">Not Spam</div>', unsafe_allow_html=True)
 
 
 
